@@ -1,0 +1,37 @@
+{
+  "all-posts": "all posts",
+  "exception": {
+    "not-found": {
+      "back": "Back to home",
+      "desc": "Sorry! The page you are looking for does not exist.<br/>It might have been moved or deleted.",
+      "title": "Page Not Found"
+    }
+  },
+  "header": {
+    "cv": "CV",
+    "blog": "Blog",
+    "tags": "Tags"
+  },
+  "latest": "Latest",
+  "no-posts-found": "No posts found.",
+  "post": {
+    "no-post": "No posts found.",
+    "page": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "published-on": "Published on",
+    "reading-time": "ReadingTime",
+    "reading-time-var": "{{time}} min read",
+    "reads": "Reads",
+    "reads-var": "{{reads}} reads",
+    "tags": "Tags",
+    "words-count": "Word count",
+    "words-count-var": "{{words}} words"
+  },
+  "search": {
+    "placeholder": "Search articles"
+  },
+  "toc": "Table of Contents",
+  "welcome": "Hello"
+}

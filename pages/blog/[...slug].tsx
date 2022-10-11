@@ -6,11 +6,17 @@ import { allBlogs, allAuthors } from 'contentlayer/generated'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
-export async function getStaticPaths() {
-  return {
-    paths: allBlogs.map((p) => ({ params: { slug: p.slug.split('/') } })),
-    fallback: false,
-  }
+export async function getStaticPaths({ locales }) {
+  // Get available locales from `context`
+  const paths = allBlogs
+    .map((path) =>
+      locales.map((locale) => ({
+        params: { slug: path.slug.split('/') },
+        locale, // Pass locale here
+      }))
+    )
+    .flat() // Flatten array to avoid nested arrays
+  return { paths, fallback: true }
 }
 
 export const getStaticProps = async ({ params }) => {

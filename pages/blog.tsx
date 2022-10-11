@@ -4,6 +4,7 @@ import { PageSEO } from '@/components/SEO'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
+import useTranslation from 'next-translate/useTranslation'
 
 export const POSTS_PER_PAGE = 5
 
@@ -29,6 +30,7 @@ export default function Blog({
   initialDisplayPosts,
   pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { t } = useTranslation('common')
   return (
     <>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
@@ -36,7 +38,7 @@ export default function Blog({
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Posts"
+        title={t('all-posts').toUpperCase()}
       />
     </>
   )

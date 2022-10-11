@@ -6,6 +6,7 @@ import kebabCase from '@/lib/utils/kebabCase'
 import { getAllTags } from '@/lib/utils/contentlayer'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
+import useTranslation from 'next-translate/useTranslation'
 
 // TODO: refactor into contentlayer once compute over all docs is enabled
 
@@ -16,6 +17,7 @@ export const getStaticProps: GetStaticProps<{ tags: Record<string, number> }> = 
 }
 
 export default function Tags({ tags }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { t } = useTranslation('common')
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
     <>
@@ -23,7 +25,7 @@ export default function Tags({ tags }: InferGetStaticPropsType<typeof getStaticP
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
         <div className="space-x-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
-            Tags
+            {t('header.tags')}
           </h1>
         </div>
         <div className="flex max-w-lg flex-wrap">
