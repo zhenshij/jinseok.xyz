@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
 }
 
 export default function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { t } = useTranslation('common')
+  const { t, lang } = useTranslation('common')
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -44,7 +44,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date)}</time>
+                        <time dateTime={date}>{formatDate(date, lang)}</time>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">

@@ -1,22 +1,24 @@
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
+  title: "Jinseok's Blog",
+  author: 'Jinseok',
+  headerTitle: "Jinseok's Blog",
   description: 'A blog created with Next.js and Tailwind.css',
-  language: 'en-us',
+  language: 'ko-kr',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://jinseok.xyz',
+  siteRepo: 'https://github.com/zhenshij/jinseok.xyz',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  email: 'jinseok.xyz@gmail.com',
+  github: 'https://github.com/zhenshij',
+  linkedin: 'https://www.linkedin.com/in/jinseok-kim',
+  locale: 'ko-KR',
+  languageCode: {
+    en: 'en-US',
+    ko: 'ko-KR',
+    zh: 'zh-CN',
+  },
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

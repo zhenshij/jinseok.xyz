@@ -9,6 +9,7 @@ import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
 import type { Blog } from 'contentlayer/generated'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
   content: CoreContent<Blog>
@@ -19,6 +20,7 @@ interface Props {
 
 export default function PostLayout({ content, next, prev, children }: Props) {
   const { slug, date, title } = content
+  const { lang } = useTranslation('common')
 
   return (
     <SectionContainer>
@@ -32,7 +34,7 @@ export default function PostLayout({ content, next, prev, children }: Props) {
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>{formatDate(date)}</time>
+                    <time dateTime={date}>{formatDate(date, lang)}</time>
                   </dd>
                 </div>
               </dl>

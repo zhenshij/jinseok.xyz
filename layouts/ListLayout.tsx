@@ -5,6 +5,7 @@ import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
   posts: CoreContent<Blog>[]
@@ -15,6 +16,8 @@ interface Props {
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }: Props) {
   const [searchValue, setSearchValue] = useState('')
+  const { lang } = useTranslation('common')
+
   const filteredBlogPosts = posts.filter((post) => {
     const searchContent = post.title + post.summary + post.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
@@ -65,7 +68,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
+                      <time dateTime={date}>{formatDate(date, lang)}</time>
                     </dd>
                   </dl>
                   <div className="space-y-3 xl:col-span-3">

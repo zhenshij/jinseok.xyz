@@ -10,6 +10,7 @@ import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
 import type { Blog, Authors } from 'contentlayer/generated'
+import useTranslation from 'next-translate/useTranslation'
 
 const editUrl = (slug) => `${siteMetadata.siteRepo}/blob/master/data/blog/${slug}`
 const discussUrl = (slug) =>
@@ -34,6 +35,7 @@ interface Props {
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: Props) {
   const { slug, date, title, tags } = content
+  const { lang } = useTranslation('common')
 
   return (
     <SectionContainer>
@@ -52,7 +54,10 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                      {new Date(date).toLocaleDateString(
+                        siteMetadata.languageCode[lang],
+                        postDateTemplate
+                      )}
                     </time>
                   </dd>
                 </div>
