@@ -21,13 +21,7 @@
       "previous": "Previous"
     },
     "published-on": "Published on",
-    "reading-time": "ReadingTime",
-    "reading-time-var": "{{time}} min read",
-    "reads": "Reads",
-    "reads-var": "{{reads}} reads",
-    "tags": "Tags",
-    "words-count": "Word count",
-    "words-count-var": "{{words}} words"
+    "tags": "Tags"
   },
   "search": {
     "placeholder": "Search articles"

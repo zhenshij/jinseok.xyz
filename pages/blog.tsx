@@ -38,7 +38,7 @@ export default function Blog({
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('all-posts').toUpperCase()}
+        title={t('all-posts')}
       />
     </>
   )

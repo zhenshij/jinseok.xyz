@@ -21,13 +21,7 @@
       "previous": "上一页"
     },
     "published-on": "发布于",
-    "reading-time": "阅读时间",
-    "reading-time-var": "约 {{time}} 分钟",
-    "reads": "阅读次数",
-    "reads-var": "{{reads}} 次阅读",
-    "tags": "标签",
-    "words-count": "字数统计",
-    "words-count-var": "约 {{words}} 字"
+    "tags": "标签"
   },
   "search": {
     "placeholder": "搜索文章"

@@ -1,4 +1,5 @@
 import Link from '@/components/Link'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
   totalPages: number
@@ -6,6 +7,7 @@ interface Props {
 }
 
 export default function Pagination({ totalPages, currentPage }: Props) {
+  const { t } = useTranslation('common')
   const prevPage = currentPage - 1 > 0
   const nextPage = currentPage + 1 <= totalPages
 
@@ -14,12 +16,12 @@ export default function Pagination({ totalPages, currentPage }: Props) {
       <nav className="flex justify-between">
         {!prevPage && (
           <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-            Previous
+            {t('post.page.previous')}
           </button>
         )}
         {prevPage && (
           <Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
-            <button>Previous</button>
+            <button>{t('post.page.previous')}</button>
           </Link>
         )}
         <span>
@@ -27,12 +29,12 @@ export default function Pagination({ totalPages, currentPage }: Props) {
         </span>
         {!nextPage && (
           <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
-            Next
+            {t('post.page.next')}
           </button>
         )}
         {nextPage && (
           <Link href={`/blog/page/${currentPage + 1}`}>
-            <button>Next</button>
+            <button>{t('post.page.next')}</button>
           </Link>
         )}
       </nav>

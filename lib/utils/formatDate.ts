@@ -3,12 +3,10 @@ import siteMetadata from '@/data/siteMetadata'
 const formatDate = (date: string, locale: string) => {
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   }
-  const now = new Date(date).toLocaleDateString(siteMetadata.languageCode[locale], options)
-
-  return now
+  return new Date(date).toLocaleDateString(siteMetadata.languageCode[locale], options)
 }
 
 export default formatDate

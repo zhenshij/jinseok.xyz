@@ -20,18 +20,12 @@
       "next": "다음",
       "previous": "이전"
     },
-    "published-on": "Published on",
-    "reading-time": "ReadingTime",
-    "reading-time-var": "{{time}} min read",
-    "reads": "Reads",
-    "reads-var": "{{reads}} reads",
-    "tags": "Tags",
-    "words-count": "Word count",
-    "words-count-var": "{{words}} words"
+    "published-on": "배포",
+    "tags": "태그"
   },
   "search": {
-    "placeholder": "Search articles"
+    "placeholder": "블로그 내 검색하기"
   },
-  "toc": "Table of Contents",
+  "toc": "목차",
   "welcome": "안녕하세요"
 }
