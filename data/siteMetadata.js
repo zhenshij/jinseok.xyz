@@ -43,7 +43,7 @@ const siteMetadata = {
       placeholder: '블로그 내 검색하기',
     },
     toc: '목차',
-    welcome: '안녕하세요',
+    welcome: ['안녕하세요', 'Hello', '你好', 'こんにちは', 'Bonjour', 'Hola'],
   },
   analytics: {
     // If you want to use an analytics provider you have to add it to the
