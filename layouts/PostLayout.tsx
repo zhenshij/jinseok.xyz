@@ -12,7 +12,6 @@ import formatDate from '@/lib/utils/formatDate'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode, useState } from 'react'
 import type { Blog, Authors } from 'contentlayer/generated'
-import useTranslation from 'next-translate/useTranslation'
 import { Toc } from 'types/Toc'
 import { useIntersectionObserver } from '@/lib/utils/useIntersectionObserver'
 
@@ -33,7 +32,6 @@ interface Props {
 
 export default function PostLayout({ content, authorDetails, next, prev, children, toc }: Props) {
   const { slug, date, title, tags } = content
-  const { t, lang } = useTranslation('common')
   const [tocActiveID, setTocActiveID] = useState('')
   useIntersectionObserver(setTocActiveID, content)
 
@@ -61,9 +59,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   </div>
                 )}
                 <div>
-                  <dt className="sr-only">{t('post.published-on')}</dt>
+                  <dt className="sr-only">{siteMetadata.text.post.publishedOn}</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>{formatDate(date, lang)}</time>
+                    <time dateTime={date}>{formatDate(date)}</time>
                   </dd>
                 </div>
               </dl>

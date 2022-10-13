@@ -4,8 +4,8 @@ import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 import { CoreContent } from '@/lib/utils/contentlayer'
+import siteMetadata from '@/data/siteMetadata'
 import type { Blog } from 'contentlayer/generated'
-import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
   posts: CoreContent<Blog>[]
@@ -16,7 +16,6 @@ interface Props {
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }: Props) {
   const [searchValue, setSearchValue] = useState('')
-  const { t, lang } = useTranslation('common')
 
   const filteredBlogPosts = posts.filter((post) => {
     const searchContent = post.title + post.summary + post.tags.join(' ')
@@ -36,10 +35,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </h1>
           <div className="relative max-w-lg">
             <input
-              aria-label={t('search.placeholder')}
+              aria-label={siteMetadata.text.search.placeholder}
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder={t('search.placeholder')}
+              placeholder={siteMetadata.text.search.placeholder}
               className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
@@ -68,7 +67,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date, lang)}</time>
+                      <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
                   </dl>
                   <div className="space-y-3 xl:col-span-3">

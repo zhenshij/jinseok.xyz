@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import useTranslation from 'next-translate/useTranslation'
 import headerNavLinks from 'data/headerNavLinks'
 import siteMetadata from 'data/siteMetadata'
 import Link from './Link'
@@ -7,8 +6,6 @@ import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 
 const Header = () => {
-  const { t } = useTranslation('common')
-
   const [stuck, setStuck] = useState(false)
   const ref = useRef<HTMLHeadElement>()
 
@@ -55,7 +52,7 @@ const Header = () => {
                 href={link.href}
                 className="p-1 font-medium text-gray-900 hover:text-gray-500 dark:text-gray-200 dark:hover:text-white sm:p-4"
               >
-                {t(link.title)}
+                {link.title}
               </Link>
             ))}
           </div>

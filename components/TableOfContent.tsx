@@ -1,5 +1,5 @@
 import { Toc } from 'types/Toc'
-import useTranslation from 'next-translate/useTranslation'
+import siteMetadata from '@/data/siteMetadata'
 
 interface TOCProps {
   toc: Toc
@@ -7,7 +7,6 @@ interface TOCProps {
 }
 
 const TableOfContent = ({ toc, tocActived }: TOCProps) => {
-  const { t } = useTranslation('common')
   const handleScrollToToc = (selector: string) => {
     const el = document.querySelector(selector) as HTMLElement
     const { offsetTop } = el
@@ -20,7 +19,7 @@ const TableOfContent = ({ toc, tocActived }: TOCProps) => {
   return (
     <div className="h-0 py-8 lg:block">
       <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-        {t('toc')}
+        {siteMetadata.text.toc}
       </h2>
       <ul className="pt-2">
         {toc.map((heading) => (

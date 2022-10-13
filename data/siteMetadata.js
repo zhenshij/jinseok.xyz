@@ -14,10 +14,36 @@ const siteMetadata = {
   github: 'https://github.com/zhenshij',
   linkedin: 'https://www.linkedin.com/in/jinseok-kim',
   locale: 'ko-KR',
-  languageCode: {
-    en: 'en-US',
-    ko: 'ko-KR',
-    zh: 'zh-CN',
+  text: {
+    allPosts: '전체 글',
+    exception: {
+      notFound: {
+        back: '홈으로 돌아가기',
+        desc: '죄송합니다! 찾고 계신 페이지가 없습니다.<br/>페이지가 이동 또는 삭제되었을 수 있습니다.',
+        title: '페이지를 찾을 수 없습니다',
+      },
+    },
+    header: {
+      cv: 'CV',
+      blog: 'Blog',
+      tags: 'Tags',
+    },
+    latest: '최근 글',
+    noPostsFound: '글을 찾지 못했습니다.',
+    post: {
+      noPost: '글을 찾지 못했습니다.',
+      page: {
+        next: '다음',
+        previous: '이전',
+      },
+      publishedOn: '배포',
+      tags: '태그',
+    },
+    search: {
+      placeholder: '블로그 내 검색하기',
+    },
+    toc: '목차',
+    welcome: '안녕하세요',
   },
   analytics: {
     // If you want to use an analytics provider you have to add it to the

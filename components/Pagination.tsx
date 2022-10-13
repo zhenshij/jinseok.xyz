@@ -1,5 +1,5 @@
 import Link from '@/components/Link'
-import useTranslation from 'next-translate/useTranslation'
+import siteMetadata from '@/data/siteMetadata'
 
 interface Props {
   totalPages: number
@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function Pagination({ totalPages, currentPage }: Props) {
-  const { t } = useTranslation('common')
   const prevPage = currentPage - 1 > 0
   const nextPage = currentPage + 1 <= totalPages
 
@@ -16,12 +15,12 @@ export default function Pagination({ totalPages, currentPage }: Props) {
       <nav className="flex justify-between">
         {!prevPage && (
           <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-            {t('post.page.previous')}
+            {siteMetadata.text.post.page.previous}
           </button>
         )}
         {prevPage && (
           <Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
-            <button>{t('post.page.previous')}</button>
+            <button>{siteMetadata.text.post.page.previous}</button>
           </Link>
         )}
         <span>
@@ -29,12 +28,12 @@ export default function Pagination({ totalPages, currentPage }: Props) {
         </span>
         {!nextPage && (
           <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
-            {t('post.page.next')}
+            {siteMetadata.text.post.page.next}
           </button>
         )}
         {nextPage && (
           <Link href={`/blog/page/${currentPage + 1}`}>
-            <button>{t('post.page.next')}</button>
+            <button>{siteMetadata.text.post.page.next}</button>
           </Link>
         )}
       </nav>
