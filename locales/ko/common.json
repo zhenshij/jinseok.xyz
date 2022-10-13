@@ -9,8 +9,8 @@
   },
   "header": {
     "cv": "CV",
-    "blog": "블로그",
-    "tags": "태그"
+    "blog": "Blog",
+    "tags": "Tags"
   },
   "latest": "최근 글",
   "no-posts-found": "글을 찾지 못했습니다.",

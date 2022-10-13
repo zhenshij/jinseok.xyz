@@ -3,7 +3,6 @@ import useTranslation from 'next-translate/useTranslation'
 import headerNavLinks from 'data/headerNavLinks'
 import siteMetadata from 'data/siteMetadata'
 import Link from './Link'
-import I18nSwitch from './I18nSwitch'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 
@@ -61,7 +60,6 @@ const Header = () => {
             ))}
           </div>
           <ThemeSwitch />
-          <I18nSwitch />
           <MobileNav />
         </div>
       </div>
