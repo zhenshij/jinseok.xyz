@@ -14,9 +14,9 @@ const Header = () => {
 
   const a = <div className="bg-[#fff1] backdrop-blur-md backdrop-filter"></div>
   const stuckClasses =
-    'py-2 md:py-5 sticky -top-1 z-50 transition-all backdrop-filter backdrop-blur-md mx-auto border-b border-slate-900/10 dark:border-slate-300/10 w-full'
+    'py-2 md:py-5 sticky -top-1 z-50 backdrop-filter backdrop-blur-md mx-auto border-b border-slate-900/10 dark:border-slate-300/10 w-full'
   const unstuckClasses =
-    'py-2 md:py-8 sticky -top-1 z-50 transition-all mx-auto border-b border-b-0 border-slate-900/10 dark:border-slate-300/10 w-full'
+    'py-2 md:py-8 sticky -top-1 z-50 mx-auto border-b border-b-0 border-slate-900/10 dark:border-slate-300/10 w-full'
 
   const classes = stuck ? stuckClasses : unstuckClasses
 
@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <header className={classes} ref={ref}>
       <div
-        className={`mx-auto flex items-center justify-between px-4 transition-all duration-500 sm:px-6 xl:px-0 ${
+        className={`mx-auto flex items-center justify-between px-4 sm:px-6 xl:px-0 ${
           stuck ? 'max-w-5xl xl:max-w-8xl' : 'max-w-3xl xl:max-w-6xl'
         }`}
       >
