@@ -4,18 +4,13 @@ export interface TendrilOption {
   spring: number
 }
 
-/**
- * 卷线节点
- */
 class TendrilNode {
   x = 0
   y = 0
   vy = 0
   vx = 0
 }
-/**
- * 卷线
- */
+
 export class Tendril implements TendrilOption {
   spring: number
   friction: number
